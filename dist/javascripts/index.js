@@ -97,25 +97,25 @@ eval("\r\n//为了统一处理跨域路径，对请求回来的数据进行处�
 
 /***/ }),
 
-/***/ "./src/javascripts/controllers/index/app-controller.js":
+/***/ "./src/javascripts/controllers/app-controller.js":
+/*!*******************************************************!*\
+  !*** ./src/javascripts/controllers/app-controller.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("//整个应用程序控制器\r\n//任务之一：将视图渲染到页面中\r\nconst appMainController = __webpack_require__(/*! ./app-main-controllers */ \"./src/javascripts/controllers/app-main-controllers.js\")\r\n\r\n\r\n// getFilmsList.render()\r\n\r\nconst render = () => {\r\n    //0、承载容器\r\n    // let opp = $('#app');\r\n    // let header = $('#header');\r\n    // let footer = $('#footer');\r\n    // let main = $('#main');\r\n    //1.获取视图\r\n    let appHeaderView = __webpack_require__(/*! ../views/app-header.html */ \"./src/javascripts/views/app-header.html\")\r\n    \r\n    let appFooterView = __webpack_require__(/*! ../views/app-footer.html */ \"./src/javascripts/views/app-footer.html\")\r\n    // console.log(appHeaderView)\r\n    //2、渲染试图\r\n    $('#header').html(\r\n        Handlebars.compile(appHeaderView)({title: '猫眼电影'})\r\n    )\r\n    \r\n    $('#footer').html(appFooterView)\r\n    $('#app-footer nav a').eq(0).addClass('active')\r\n    appMainController.render()\r\n}\r\n\r\nmodule.exports = { render }\n\n//# sourceURL=webpack:///./src/javascripts/controllers/app-controller.js?");
+
+/***/ }),
+
+/***/ "./src/javascripts/controllers/app-main-controllers.js":
 /*!*************************************************************!*\
-  !*** ./src/javascripts/controllers/index/app-controller.js ***!
+  !*** ./src/javascripts/controllers/app-main-controllers.js ***!
   \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("//整个应用程序控制器\r\n//任务之一：将视图渲染到页面中\r\nconst appMainController = __webpack_require__(/*! ./app-main-controllers */ \"./src/javascripts/controllers/index/app-main-controllers.js\")\r\n\r\n\r\n// getFilmsList.render()\r\n\r\nconst render = () => {\r\n    //0、承载容器\r\n    // let opp = $('#app');\r\n    // let header = $('#header');\r\n    // let footer = $('#footer');\r\n    // let main = $('#main');\r\n    //1.获取视图\r\n    let appHeaderView = __webpack_require__(/*! ../../views/app-header.html */ \"./src/javascripts/views/app-header.html\")\r\n    \r\n    let appFooterView = __webpack_require__(/*! ../../views/app-footer.html */ \"./src/javascripts/views/app-footer.html\")\r\n    // console.log(appHeaderView)\r\n    //2、渲染试图\r\n    $('#header').html(\r\n        Handlebars.compile(appHeaderView)({title: '猫眼电影'})\r\n    )\r\n    \r\n    $('#footer').html(appFooterView)\r\n    $('#app-footer nav a').eq(0).addClass('active')\r\n    appMainController.render()\r\n}\r\n\r\nmodule.exports = { render }\n\n//# sourceURL=webpack:///./src/javascripts/controllers/index/app-controller.js?");
-
-/***/ }),
-
-/***/ "./src/javascripts/controllers/index/app-main-controllers.js":
-/*!*******************************************************************!*\
-  !*** ./src/javascripts/controllers/index/app-main-controllers.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("\r\nconst { getFilmsList } = __webpack_require__(/*! ../../models/index/app-main-model */ \"./src/javascripts/models/index/app-main-model.js\")\r\n\r\nconst render = async ( ) => {\r\n    let appMainView = __webpack_require__(/*! ../../views/app-main.html */ \"./src/javascripts/views/app-main.html\")\r\n    //渲染首页的电影列表页面\r\n    let FileList = await getFilmsList()\r\n    let template = Handlebars.compile(appMainView)\r\n    $('#main').html(template({ films: FileList.movieList}))\r\n    console.log(FileList)\r\n\r\n}\r\n\r\nmodule.exports = { render } \n\n//# sourceURL=webpack:///./src/javascripts/controllers/index/app-main-controllers.js?");
+eval("\r\nconst { getFilmsList } = __webpack_require__(/*! ../models/app-main-model */ \"./src/javascripts/models/app-main-model.js\")\r\n\r\nconst render = async ( ) => {\r\n    let appMainView = __webpack_require__(/*! ../views/app-main.html */ \"./src/javascripts/views/app-main.html\")\r\n    //渲染首页的电影列表页面\r\n    let FileList = await getFilmsList()\r\n    let template = Handlebars.compile(appMainView)\r\n    $('#main').html(template({ films: FileList.movieList}))\r\n    console.log(FileList)\r\n\r\n}\r\n\r\nmodule.exports = { render } \n\n//# sourceURL=webpack:///./src/javascripts/controllers/app-main-controllers.js?");
 
 /***/ }),
 
@@ -126,18 +126,18 @@ eval("\r\nconst { getFilmsList } = __webpack_require__(/*! ../../models/index/ap
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\r\nconst appController = __webpack_require__(/*! ./controllers/index/app-controller */ \"./src/javascripts/controllers/index/app-controller.js\")\r\n\r\nappController.render()\n\n//# sourceURL=webpack:///./src/javascripts/index.js?");
+eval("\r\nconst appController = __webpack_require__(/*! ./controllers/app-controller */ \"./src/javascripts/controllers/app-controller.js\")\r\n\r\nappController.render()\n\n//# sourceURL=webpack:///./src/javascripts/index.js?");
 
 /***/ }),
 
-/***/ "./src/javascripts/models/index/app-main-model.js":
-/*!********************************************************!*\
-  !*** ./src/javascripts/models/index/app-main-model.js ***!
-  \********************************************************/
+/***/ "./src/javascripts/models/app-main-model.js":
+/*!**************************************************!*\
+  !*** ./src/javascripts/models/app-main-model.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\r\nconst api = __webpack_require__(/*! ../../api/index */ \"./src/javascripts/api/index.js\")\r\n\r\nconst getFilmsList = () => {\r\n    return api.request({url: '/ajax/movieOnInfoList?token='})\r\n    // return new Promise((res, rej) => {\r\n    //     api.request({\r\n    //         url: '/ajax/movieOnInfoList?token=',\r\n    //         success: (data) => {\r\n    //             res(data)\r\n    //         }\r\n    //     })\r\n    // })\r\n}\r\n\r\nmodule.exports = {\r\n    getFilmsList\r\n}\r\n\r\n\n\n//# sourceURL=webpack:///./src/javascripts/models/index/app-main-model.js?");
+eval("\r\nconst api = __webpack_require__(/*! ../api/index */ \"./src/javascripts/api/index.js\")\r\n\r\nconst getFilmsList = () => {\r\n    return api.request({url: '/ajax/movieOnInfoList?token='})\r\n    // return new Promise((res, rej) => {\r\n    //     api.request({\r\n    //         url: '/ajax/movieOnInfoList?token=',\r\n    //         success: (data) => {\r\n    //             res(data)\r\n    //         }\r\n    //     })\r\n    // })\r\n}\r\n\r\nmodule.exports = {\r\n    getFilmsList\r\n}\r\n\r\n\n\n//# sourceURL=webpack:///./src/javascripts/models/app-main-model.js?");
 
 /***/ }),
 

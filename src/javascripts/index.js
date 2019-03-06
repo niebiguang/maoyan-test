@@ -1,4 +1,4 @@
 
-const appController = require('./controllers/index/app-controller')
+const appController = require('./controllers/app-controller')
 
 appController.render()
