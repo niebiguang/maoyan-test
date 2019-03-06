@@ -3,7 +3,8 @@ const path = require ('path')
 const webpackConfig = {
     mode: 'development',//配置打包模式
     entry: {
-        index: path.join(__dirname,'../src/javascripts/index.js')
+        index: path.join(__dirname,'../src/javascripts/index.js'),
+        cinema: path.join(__dirname,'../src/javascripts/cinema.js')
     },
     output:{
         // path: path.join(__dirname,'../dist/javascripts/index.js'),

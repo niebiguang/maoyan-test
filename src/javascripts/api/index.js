@@ -5,15 +5,16 @@ const api = {
         url,
         data,
         methoed,
-        success
+        // success
     }) {
-        $.ajax({
+        return $.ajax({
             url: '/maoyan' + url,
             data:data || {},
             methoed:methoed || 'get',
             success: (res) => {
                 // console.log(res)
-                success(res)
+                // success (res)
+                return res
             },
             error:(error) => {
                 console.log('请求出错',error)
