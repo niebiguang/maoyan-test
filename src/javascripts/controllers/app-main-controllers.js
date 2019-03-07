@@ -7,7 +7,7 @@ const render = async ( ) => {
     let FileList = await getFilmsList()
     let template = Handlebars.compile(appMainView)
     $('#main').html(template({ films: FileList.movieList}))
-    console.log(FileList)
+    // console.log(FileList)
 
 }
 
